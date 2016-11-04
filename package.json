@@ -1,0 +1,11 @@
+{
+  "name": "assets-frontend-next",
+  "version": "1.0.0",
+  "description": "A proof of concept for the future direction of HMRC's assets frontend",
+  "keywords": [
+    "HMRC",
+    "assets"
+  ],
+  "author": "Rory Powis <rory.powis@digital.hmrc.gov.uk>",
+  "license": "Apache-2.0"
+}
