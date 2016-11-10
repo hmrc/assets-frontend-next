@@ -1,0 +1,13 @@
+{% import "src/components/input-number/input-number.html" as input %}
+
+{% macro dateOfBirth(legend='Date of Birth', hint='For example, 31 12 17') %}
+<fieldset>
+  <legend>{{ legend }}</legend>
+
+  <span>{{ hint }}</span>
+
+  {{ input.inputNumber('day', 'Day') }}
+  {{ input.inputNumber('month', 'Month') }}
+  {{ input.inputNumber('year', 'Year') }}
+</fieldset>
+{% endmacro %}

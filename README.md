@@ -3,6 +3,46 @@
 A proof of concept for the future direction of HMRC's [assets-frontend](https://github.com/hmrc/assets-frontend)
 
 
+## Table of Contents
+
+* [Requirements](#requirements)
+* [Usage](#usage)
+* [Structure](#structure)
+* [Contributing](#contributing)
+* [License](#license)
+
+
+## Requirements
+
+Assets Frontend Next requires the following to run:
+
+* [Node.js](https://nodejs.org/) >= 4.5.5
+* [npm](https://www.npmjs.com/) (normally comes with Node.js)
+
+
+## Usage
+
+### Local development
+
+First clone this repo...
+
+```sh
+git clone https://github.com/hmrc/assets-frontend.git
+```
+
+Install its dependencies...
+
+```sh
+npm install
+```
+
+Then run the development tasks with...
+
+```sh
+npm start
+```
+
+
 ## Structure
 
 ```
@@ -67,6 +107,15 @@ A proof of concept for the future direction of HMRC's [assets-frontend](https://
 	* **components** - The building blocks for design-patterns. These consist of at least a view and a stylesheet and may optionally contain a javascript file.
 	* **design-patterns** - Reusable collections of components for commonly used parts of pages. These also consist of at least a view and a stylesheet and may optionally contain a javascript file.
 * **library-template.html** - This is the template file that the design-pattern-library will be generated from.
+
+
+## Contributing
+
+To contribute to Assets Frontend Next...
+
+* Clone this repo
+* Create a new branch and commit your changes to it
+* Push your branch and open a pull request
 
 
 ## License

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Design Patterns</title>
+    <link rel="stylesheet" href="/assets/application.css">
+  </head>
+
+  <body>
+    {% if menu %}
+    <ul>
+      {% for item in menu %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% block pattern %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{% macro inputNumber(name='number', title='Number Input') %}
+<div>
+  <label for="{{ name }}">{{ title }}</label>
+  <input id="{{ name }}" name="{{ name }}" type="number" value="">
+</div>
+{% endmacro %}
