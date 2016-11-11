@@ -1,6 +1,14 @@
-const del = require('del')
-const config = require('./config')
+const fs = require('fs-extra')
+const config = require('./config').clean
 
-del(config.clean).then((paths) => {
-  console.log('Deleting files and folders...\n', paths.join('\n'));
-});
+console.log('Deleting files and folders...')
+
+config.forEach((dir) => {
+  fs.remove(dir, (err) => {
+    if (err) {
+      return console.log(err)
+    }
+
+    console.log(`[SUCCESS] ${dir}`)
+  })
+})
