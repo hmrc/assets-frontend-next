@@ -3,6 +3,7 @@ const path = require('path')
 const glob = require("glob")
 const nunjucks = require('nunjucks')
 const config = require('./config').library
+const writeFile = require('./utils/writeFile')
 
 const renderTemplate = (template, layout) => {
   const fileName = path.basename(template, '.html')
@@ -18,26 +19,6 @@ const renderTemplate = (template, layout) => {
   return nunjucks.renderString(renderString)
 }
 
-const writeTemplate = (filepath, content) => {
-  const fullPath = path.join(config.dest, filepath)
-
-  fs.access(fullPath, (err) => {
-
-    if(err) {
-      fs.mkdirpSync(path.dirname(err.path))
-    }
-
-    fs.writeFile(fullPath, content, (err) => {
-      if(err) {
-        return console.log(err)
-      }
-
-      const patternName = path.basename(fullPath, '.html')
-      console.log(`[SUCCESS] ${filepath}`)
-    })
-  })
-}
-
 glob(config.src, (err, files) => {
   console.log('Generating design patterns...')
 
@@ -50,7 +31,7 @@ glob(config.src, (err, files) => {
     const dirName = file.split('/')[1]
     const tmpl = renderTemplate(file, config.layout)
 
-    writeTemplate(`${dirName}/${filename}`, tmpl)
+    writeFile(`${config.dest}/${dirName}/${filename}`, tmpl)
 
     return {
       url: `${dirName}/${filename}`,
@@ -59,5 +40,5 @@ glob(config.src, (err, files) => {
   })
 
   const index = nunjucks.render(config.layout, { menu: menuItems })
-  writeTemplate('index.html', index)
+  writeFile(`${config.dest}/index.html`, index)
 })

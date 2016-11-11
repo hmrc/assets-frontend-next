@@ -3,25 +3,7 @@ const path = require('path')
 const glob = require('glob')
 const sass = require('node-sass')
 const config = require('./config').styles
-
-const writeStyles = (filepath, content) => {
-  const fullPath = path.join(config.dest, filepath)
-
-  fs.access(fullPath, (err) => {
-    if(err) {
-      fs.mkdirpSync(path.dirname(err.path))
-    }
-
-    fs.writeFile(fullPath, content, (err) => {
-      if(err) {
-        return console.log(err)
-      }
-
-      const patternName = path.basename(fullPath)
-      console.log(`[SUCCESS] ${patternName}`)
-    })
-  })
-}
+const writeFile = require('./utils/writeFile')
 
 glob(config.src, (err, files) => {
   console.log('Compiling styles...')
@@ -40,7 +22,7 @@ glob(config.src, (err, files) => {
       }
 
       const fileName = path.basename(file, '.scss')
-      writeStyles(`${fileName}.css`, result.css)
+      writeFile(`${config.dest}/${fileName}.css`, result.css)
     })
   })
 })
