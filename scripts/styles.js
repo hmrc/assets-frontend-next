@@ -1,8 +1,7 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const glob = require('glob')
 const sass = require('node-sass')
-const mkdirp = require('mkdirp')
 const config = require('./config').styles
 
 const writeStyles = (filepath, content) => {
@@ -10,7 +9,7 @@ const writeStyles = (filepath, content) => {
 
   fs.access(fullPath, (err) => {
     if(err) {
-      mkdirp.sync(path.dirname(err.path))
+      fs.mkdirpSync(path.dirname(err.path))
     }
 
     fs.writeFile(fullPath, content, (err) => {

@@ -1,7 +1,6 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const glob = require("glob")
-const mkdirp = require('mkdirp')
 const nunjucks = require('nunjucks')
 const config = require('./config').library
 
@@ -25,7 +24,7 @@ const writeTemplate = (filepath, content) => {
   fs.access(fullPath, (err) => {
 
     if(err) {
-      mkdirp.sync(path.dirname(err.path))
+      fs.mkdirpSync(path.dirname(err.path))
     }
 
     fs.writeFile(fullPath, content, (err) => {
