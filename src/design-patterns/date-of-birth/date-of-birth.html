@@ -1,13 +1,20 @@
 {% import "src/components/input-number/input-number.html" as input %}
 
-{% macro dateOfBirth(legend='Date of Birth', hint='For example, 31 12 17') %}
-<fieldset>
-  <legend>{{ legend }}</legend>
+{% macro dateOfBirth(title='Date of Birth', hint='For example, 31 3 1980') %}
+<form>
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">{{ title }}</span>
+        <span class="form-hint" id="dob-hint">{{ hint }}</span>
+      </legend>
 
-  <span>{{ hint }}</span>
-
-  {{ input.inputNumber('day', 'Day') }}
-  {{ input.inputNumber('month', 'Month') }}
-  {{ input.inputNumber('year', 'Year') }}
-</fieldset>
+      <div class="form-date">
+        {{ input.inputNumber('Day', 'day', '[0-9]*', '0', '31') }}
+        {{ input.inputNumber('Month', 'month', '[0-9]*', '0', '12') }}
+        {{ input.inputNumber('Year', 'year', '[0-9]*', '0', '2099') }}
+      </div>
+    </fieldset>
+  </div>
+</form>
 {% endmacro %}
