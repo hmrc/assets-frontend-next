@@ -10,8 +10,13 @@
   "license": "Apache-2.0",
   "scripts": {
     "clean": "node scripts/clean.js",
+    "styles": "node scripts/styles.js",
     "library": "node scripts/library.js",
-    "start": "npm run clean && npm run library"
+    "start": "npm run clean && npm run styles && npm run library"
+  },
+  "dependencies": {
+    "govuk-elements-sass": "^2.1.0",
+    "node-sass": "^3.11.2"
   },
   "devDependencies": {
     "del": "^2.2.2",
