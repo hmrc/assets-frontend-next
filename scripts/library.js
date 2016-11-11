@@ -31,7 +31,7 @@ glob(config.src, (err, files) => {
     const dirName = file.split('/')[1]
     const tmpl = renderTemplate(file, config.layout)
 
-    writeFile(`${config.dest}/${dirName}/${filename}`, tmpl)
+    writeFile(`${config.dist}/${dirName}/${filename}`, tmpl)
 
     return {
       url: `${dirName}/${filename}`,
@@ -40,5 +40,5 @@ glob(config.src, (err, files) => {
   })
 
   const index = nunjucks.render(config.layout, { menu: menuItems })
-  writeFile(`${config.dest}/index.html`, index)
+  writeFile(`${config.dist}/index.html`, index)
 })
