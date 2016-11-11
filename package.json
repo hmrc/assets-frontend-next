@@ -7,5 +7,21 @@
     "assets"
   ],
   "author": "Rory Powis <rory.powis@digital.hmrc.gov.uk>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "scripts": {
+    "clean": "node scripts/clean.js",
+    "copy": "node scripts/copy.js",
+    "styles": "node scripts/styles.js",
+    "library": "node scripts/library.js && npm run copy",
+    "start": "npm run clean && npm run styles && npm run library"
+  },
+  "dependencies": {
+    "govuk-elements-sass": "^2.1.0",
+    "node-sass": "^3.11.2"
+  },
+  "devDependencies": {
+    "fs-extra": "^1.0.0",
+    "glob": "^7.1.1",
+    "nunjucks": "^2.5.2"
+  }
 }

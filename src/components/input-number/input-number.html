@@ -1,0 +1,6 @@
+{% macro inputNumber(title='Number Input', name='number', pattern='', min='', max='') %}
+<div class="form-group">
+  <label class="form-label" for="{{ name }}">{{ title }}</label>
+  <input class="form-control" id="{{ name }}" name="{{ name }}" type="number" pattern="{{ pattern }}" min="{{ min }}" max="{{ max }}" value="">
+</div>
+{% endmacro %}
