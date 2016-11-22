@@ -1,0 +1,13 @@
+{% macro characterCounter(label='Character Counter', maxLength='250') %}
+<form>
+  <div class="form-group">
+    <label class="form-label" for="textarea-a">
+      {{ label }}
+    </label>
+
+    <div class="char-counter" data-char-counter>
+      <textarea class="form-control" id="textarea-a" cols="40" rows="2" maxLength="{{ maxLength }}" data-char-field></textarea>
+    </div>
+  </div>
+</form>
+{% endmacro %}
