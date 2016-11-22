@@ -1,1 +1,9 @@
+// Third Party
+@import "common/stylesheets/govuk-frontend-toolkit";
+
+@import "elements/helpers";
+@import "elements/reset";
+
+// Custom
 @import "design-patterns/date-of-birth/date-of-birth";
+@import "design-patterns/character-counter/character-counter";
