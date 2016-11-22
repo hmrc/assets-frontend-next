@@ -22,7 +22,7 @@ glob(config.src, (err, files) => {
       }
 
       const fileName = path.basename(file, '.scss')
-      writeFile(`${config.dist}/${fileName}.css`, result.css)
+      writeFile(`${config.dest}/${fileName}.css`, result.css)
     })
   })
 })

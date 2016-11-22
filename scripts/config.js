@@ -1,25 +1,25 @@
 const src = "src"
-const dist = "dist"
+const dest = "dist"
 const patternLib = "design-pattern-library"
 
 module.exports = {
   src,
-  dist,
+  dest,
 
   clean: [
-    dist,
+    dest,
     patternLib
   ],
 
   library: {
     src: `${src}/**/*.html`,
-    dist: patternLib,
+    dest: patternLib,
     layout: 'library-template.html'
   },
 
   styles: {
     src: `${src}/!(_)*.scss`,
-    dist: `${dist}/stylesheets`,
+    dest: `${dest}/stylesheets`,
     includePaths: [
       'node_modules/govuk_frontend_toolkit/stylesheets',
       'node_modules/govuk-elements-sass/public/sass'
