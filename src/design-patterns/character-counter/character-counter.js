@@ -1,18 +1,4 @@
-/**
- * Character Counter Module
- *
- * Usage:
- *
- *  <div class="char-counter" data-char-counter>
- *    <textarea data-char-field maxLength="250"></textarea>
- *  </div>
- *
- * Known Issue:
- *
- * Chrome counts new lines as two characters, while other browser count them as one.
- * In non-Chrome browsers, sometimes it will say 0 characters remaining but let you type one more.
- *
- */
+
 var counterContainer = '[data-char-counter]',
     counterField     = '[data-char-field]',
     counterValue     = '[data-counter]',
