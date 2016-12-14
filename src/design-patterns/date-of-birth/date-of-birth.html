@@ -1,4 +1,4 @@
-{% import "../../components/input-number/input-number.html" as input %}
+{% from "../../components/input-number/input-number.html" import inputNumber %}
 
 {% macro dateOfBirth(title='Date of Birth', hint='For example, 31 3 1980') %}
 <form>
@@ -10,9 +10,9 @@
       </legend>
 
       <div class="form-date">
-        {{ input.inputNumber('Day', 'day', '[0-9]*', '0', '31') }}
-        {{ input.inputNumber('Month', 'month', '[0-9]*', '0', '12') }}
-        {{ input.inputNumber('Year', 'year', '[0-9]*', '0', '2099') }}
+        {{ inputNumber('Day', 'day', '[0-9]*', '0', '31') }}
+        {{ inputNumber('Month', 'month', '[0-9]*', '0', '12') }}
+        {{ inputNumber('Year', 'year', '[0-9]*', '0', '2099') }}
       </div>
     </fieldset>
   </div>
