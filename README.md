@@ -2,6 +2,7 @@
 
 A proof of concept for the future direction of HMRC's [assets-frontend](https://github.com/hmrc/assets-frontend)
 
+*IMPORTANT:* This repo is intended only as a reference and not for use in any projects or services. It will be deleted once we have started to align assets-frontend to this structure.
 
 ## Table of Contents
 
@@ -72,10 +73,7 @@ npm start
 │   │   ├── javascript/
 │   │   │   └── formValidation.js
 │   │   └── stylesheets/
-│   │       ├── _colours.scss
-│   │       ├── _input.scss
 │   │       ├── _normalize.scss
-│   │       ├── _typography.scss
 │   │       └── _vars.scss
 │   ├── components/
 │   │   └── input-number/
