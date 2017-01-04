@@ -121,6 +121,7 @@ npm start
 	* Makes it simple to transpile them into other templating languages
 * Simple build tasks for compiling for various outputs (npm package, deployable production assets, pattern library, partials for play frontends, etc.) means this repo becomes a source of truth for all our design pattern code and their documentation rather than being a one-to-one representation of what gets deployed.
 
+There are also [some slides here](https://docs.google.com/presentation/d/1xrbhC7zJC78Ca1ATPaCIH0adAb0onLlHEWNqIW_esMI) that give a comparison of this repo with the current state of our assets.
 
 ## Contributing
 
