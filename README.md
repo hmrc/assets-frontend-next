@@ -21,7 +21,7 @@ This repo is intended **only** for reference and not for use with any projects o
 Assets Frontend Next requires the following to run:
 
 * [Node.js](https://nodejs.org/) >= 4.5.5
-* [npm](https://www.npmjs.com/) (normally comes with Node.js)
+* [npm](https://www.npmjs.com/) (normally comes with Node.js) >= 3.0.0
 
 
 ## Usage
