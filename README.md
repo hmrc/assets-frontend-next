@@ -2,13 +2,16 @@
 
 A proof of concept for the future direction of HMRC's [assets-frontend](https://github.com/hmrc/assets-frontend)
 
-**IMPORTANT:** This repo is intended only as a reference and not for use in any projects or services. It will be deleted once we have started to align assets-frontend to this structure.
+### IMPORTANT...
+
+This repo is intended **only** for reference and not for use with any projects or services. It will be deleted once we have started to align [assets-frontend](https://github.com/hmrc/assets-frontend) to this structure.
 
 ## Table of Contents
 
 * [Requirements](#requirements)
 * [Usage](#usage)
 * [Structure](#structure)
+* [Benefits](#benefits)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -105,6 +108,18 @@ npm start
 	* **components** - The building blocks for design-patterns. These consist of at least a view and a stylesheet and may optionally contain a javascript file.
 	* **design-patterns** - Reusable collections of components for commonly used parts of pages. These also consist of at least a view and a stylesheet and may optionally contain a javascript file.
 * **library-template.html** - This is the template file that the design-pattern-library will be generated from.
+
+
+## Benefits
+
+* All files and information (markup, styles, scripts, tests, documentation, etc.) are kept together for each design pattern or component which
+	* Makes things easier to find, understand, and update
+	* Provides a more consistent naming convention - everything is named after the directory
+* Using [Nunjucks macros](https://mozilla.github.io/nunjucks/templating.html#macro) for design pattern and component templates 
+	* Makes them extremely composable
+	* Makes them easy to use in a prototype.
+	* Makes it simple to transpile them into other templating languages
+* Simple build tasks for compiling for various outputs (npm package, deployable production assets, pattern library, partials for play frontends, etc.) means this repo becomes a source of truth for all our design pattern code and their documentation rather than being a one-to-one representation of what gets deployed.
 
 
 ## Contributing
